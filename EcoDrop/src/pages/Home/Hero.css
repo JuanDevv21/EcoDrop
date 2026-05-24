@@ -51,6 +51,19 @@
     box-sizing: border-box;
 }
 
+.herot3 a, 
+.herot3 a:visited, 
+.herot3 a:active {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.2s ease;
+}
+
+.herot3 a:hover {
+    color: #6b705c;          
+}
+
 .hero {
     height: 812px;
     display: flex;
@@ -101,7 +114,7 @@
 
 .herot2 {
     margin-left: 50px;
-    margin-bottom: 20px;
+    margin-bottom: 30px;
     font-size: 18px;
     width: 600px;
     font-family: 'Manrope';

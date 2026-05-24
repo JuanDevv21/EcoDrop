@@ -51,6 +51,10 @@
     box-sizing: border-box;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 
 .contenedor1 {
     margin-top: 80px;

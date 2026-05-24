@@ -46,71 +46,78 @@
     src: url('../assets/fonts/Manrope/static/Manrope-ExtraBold.ttf') format('trueType'); 
 }
 
-* {
-    margin: 0px;
-    box-sizing: border-box;
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2000; 
+    animation: fadeIn 0.2s ease-out;
 }
 
-.navb2 a, 
-.navb2 a:visited, 
-.navb2 a:active {
-    color: #000000;
-    text-decoration: none;
-    font-weight: 500;
-    transition: color 0.2s ease;
+.modal-content {
+    background: #ffffff;
+    padding: 30px;
+    border-radius: 12px;
+    width: 90%;
+    max-width: 600px;
+    max-height: 80vh;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
 }
 
-.navb2 a:hover {
-    color: #6b705c;          
-}
-
-.navb3 a, 
-.navb3 a:visited, 
-.navb3 a:active {
-    color: white;
-    text-decoration: none;
-    font-weight: 500;
-    transition: color 0.2s ease;
-}
-
-
-
-.navb {
+.modal-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 100%;
-    height: 100px;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 15px;
+    margin-bottom: 15px;
 }
 
-.navb1 {
-    margin-left: 20px;
+.modal-header h3 {
+    margin: 0;
+    color: #2e7d32;
+    font-size: 20px;
     font-family: 'Eb Garamond';
+}
+
+.modal-close-btn {
+    background: none;
+    border: none;
     font-size: 28px;
-    color: #6b705c;
-}
-
-.navb2 {
-    display: flex;
-    width: 320px;
-    justify-content: space-between;
-    font-family: 'Manrope';
-    font-size: 18px;
-}
-
-.navb2 span {
     cursor: pointer;
+    color: #888;
+    line-height: 1;
 }
 
-.navb3 {
-    border: 1px solid #B07D62;
-    font-family: 'Manrope';
+.modal-close-btn:hover {
+    color: #000;
+}
+
+.modal-body {
+    overflow-y: auto;
+    padding-right: 10px;
     font-size: 14px;
-    margin-right: 20px;
-    padding: 5px 20px;
-    border-radius: 10px;
-    background-color: #B07D62;
-    color: white;
-    font-weight: 600;
-    cursor: pointer;
+    line-height: 1.6;
+    color: #444;
+    font-family: 'Manrope';
+}
+
+.modal-body h4 {
+    color: #333;
+    margin-top: 15px;
+    margin-bottom: 5px;
+    font-family: 'Eb Garamond';
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
 }
