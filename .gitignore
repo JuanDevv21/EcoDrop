@@ -1,0 +1,11 @@
+# Bloquea los archivos secretos de ambas carpetas
+Backend/.env
+EcoDrop/.env
+
+# Bloquea las dependencias pesadas de ambas carpetas
+Backend/node_modules/
+EcoDrop/node_modules/
+
+# Bloquea las carpetas de compilación
+EcoDrop/dist/
+EcoDrop/build/
