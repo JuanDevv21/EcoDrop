@@ -18,7 +18,7 @@ const transporter = nodemailer.createTransport({
 app.post('/api/suscripcion', (req, res) => {
     const {user_name, user_email} = req.body
 
-    const codigoDescuento = `ECOCELL-${Math.random().toString(36).substring(2, 6).toUpperCase()}`
+    const codigoDescuento = `ECODROP-${Math.random().toString(36).substring(2, 6).toUpperCase()}`
 
     const mailAdminOptions = {
 
