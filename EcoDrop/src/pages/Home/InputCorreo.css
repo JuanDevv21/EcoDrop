@@ -1,0 +1,66 @@
+/* Input container */
+.input-container {
+    position: relative;
+    margin-top: 70px;
+    margin-left: 100px;
+    margin-right: 120px;
+    font-family: 'Manrope';
+
+}
+
+/* Input field */
+.input-field {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: none;
+    border-bottom: 2px solid #ccc;
+    outline: none;
+    background-color: transparent;
+    color: white;
+    font-family: 'Manrope';
+}
+
+.input-field::placeholder {
+    color: #A5A58D;
+    opacity: 1;
+}
+
+.input-field:focus::placeholder {
+    color: transparent;
+}
+
+/* Input label */
+.input-label {
+    position: absolute;
+    top: 0;
+    left: 0;
+    font-size: 16px;
+    color: rgba(204, 204, 204, 0);
+    pointer-events: none;
+    transition: all 0.3s ease;
+}
+
+/* Input highlight */
+.input-highlight {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 2px;
+    width: 0;
+    background-color: #A5A58D;
+    transition: all 0.3s ease;
+}
+
+/* Input field:focus styles */
+.input-field:focus + .input-label {
+    top: -20px;
+    font-size: 16px;
+    color: #A5A58D;
+    font-family: 'Manrope';
+}
+
+.input-field:focus + .input-label + .input-highlight {
+    width: 100%;
+}

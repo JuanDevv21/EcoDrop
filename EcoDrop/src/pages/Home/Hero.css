@@ -1,0 +1,123 @@
+@font-face {
+    font-display: swap;
+    font-family: 'Eb Garamond';
+    font-style: normal;
+    font-weight: 400;
+    src: url('../assets/fonts/EB_Garamond/static/EBGaramond-Regular.ttf') format('trueType'); 
+}
+/* Eb Garamond - latin */
+@font-face {
+    font-display: swap;
+    font-family: 'Eb Garamond';
+    font-style: normal;
+    font-weight: 600;
+    src: url('../assets/fonts/EB_Garamond/static/EBGaramond-Bold.ttf') format('trueType'); 
+}
+/* Eb Garamond-800 - latin */
+@font-face {
+    font-display: swap;
+    font-family: 'Eb Garamond';
+    font-style: normal;
+    font-weight: 800;
+    src: url('../assets/fonts/EB_Garamond/static/EBGaramond-ExtraBold.ttf') format('trueType'); 
+}
+
+@font-face {
+    font-display: swap;
+    font-family: 'Manrope';
+    font-style: normal;
+    font-weight: 400;
+    src: url('../assets/fonts/Manrope/static/Manrope-Regular.ttf') format('trueType'); 
+}
+/* manrope-600 - latin */
+@font-face {
+    font-display: swap;
+    font-family: 'Manrope';
+    font-style: normal;
+    font-weight: 600;
+    src: url('../assets/fonts/Manrope/static/Manrope-Bold.ttf') format('trueType'); 
+}
+/* manrope-800 - latin */
+@font-face {
+    font-display: swap;
+    font-family: 'Manrope';
+    font-style: normal;
+    font-weight: 800;
+    src: url('../assets/fonts/Manrope/static/Manrope-ExtraBold.ttf') format('trueType'); 
+}
+
+* {
+    margin: 0px;
+    box-sizing: border-box;
+}
+
+.hero {
+    height: 812px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-position: right center;
+    background-size: cover;
+    
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-image: url('../../assets/img/heroimg.png');
+    background-repeat: no-repeat;
+    background-position: right center;
+    background-size: cover;
+    -webkit-mask-image: linear-gradient(to right, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 1) 40%);
+    mask-image: linear-gradient(to right, rgba(0, 0, 0, 0) 20%, rgba(0, 0, 0, 1)60%);
+    z-index: 1;
+}
+
+.hero > * {
+    position: relative;
+    z-index: 2; 
+}
+
+.herot1 {
+    margin-left: 50px;
+    letter-spacing: 1px;
+    color: #B07D62;
+    font-family: 'Manrope';
+    margin-bottom: 10px;
+    font-size: 18px;
+}
+
+.hero h1 {
+    margin-left: 50px;
+    margin-bottom: 20px;
+    font-family: 'Eb Garamond';
+    font-weight: 400;
+    font-size: 50px;
+    width: 600px;
+    color: #6b705c;
+}
+
+.herot2 {
+    margin-left: 50px;
+    margin-bottom: 20px;
+    font-size: 18px;
+    width: 600px;
+    font-family: 'Manrope';
+}
+
+.herot3 {
+    margin-left: 50px;
+    width: 370px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.herot3 span {
+    font-family: 'Manrope';
+    padding: 5px 20px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
