@@ -18,7 +18,7 @@ const transporter = nodemailer.createTransport({
 app.post('/api/suscripcion', (req, res) => {
     const {user_name, user_email} = req.body
 
-    const codigoDescuento = `ECO-${Math.random().toString(36).substring(2, 6).toUpperCase()}`
+    const codigoDescuento = `ECOCELL-${Math.random().toString(36).substring(2, 6).toUpperCase()}`
 
     const mailAdminOptions = {
 
@@ -45,7 +45,7 @@ app.post('/api/suscripcion', (req, res) => {
                     <p style="margin: 0; font-size: 16px; color: #33691e;">Aquí tienes tu beneficio de bienvenida:</p>
                     <h3 style="margin: 10px 0; color: #2e7d32; font-size: 24px;">15% DE DESCUENTO</h3>
                     <p style="margin: 5px 0; font-size: 14px; color: #555;">Usa este código al finalizar tu primera compra:</p>
-                    <span style="display: inline-block; background: #2e7d32; color: white; padding: 10px 20px; font-weight: bold; font-size: 18px; border-radius: 4px; letter-spacing: 2px; margin-top: 10px;">
+                    <span style="display: inline-block; background: #2e7d32; color: white; padding: 10px 20px; font-weight: bold; font-size: 18px; border-radius: 4px; letter-spacing: 2px; margin-top: 10px; text-transform: uppercase; white-space: nowrap;">
                         ${codigoDescuento}
                     </span>
                 </div>
