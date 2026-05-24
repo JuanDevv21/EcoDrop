@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import Navbar from "../../components/Navbar";
+import { useState } from "react";
 import Hero from "./Hero";
 import "./Home.css"
 import Warning from "../../assets/alert-triangle.svg"
@@ -12,8 +13,44 @@ import Plus from "../../assets/plus.svg"
 import Star from "../../assets/star.svg"
 import Input from "./Input";
 import InputCorreo from "./InputCorreo";
+import toast, { Toaster } from 'react-hot-toast';
 
 const Home = () => {
+
+    const [formData, setFormData] = useState({ user_name: "", user_email: "" });
+
+    const handleChange = (e) => {
+        const { name, value } = e.target;
+        setFormData({
+            ...formData,
+            [name]: value
+        });
+    };
+    const enviarCorreo = async (e) => {
+    e.preventDefault();
+
+    try {
+        const response = await fetch("http://localhost:5000/api/suscripcion", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify(formData),
+        });
+
+        if (response.ok) {
+            toast.success("¡Te has suscrito con éxito!", {
+            style: { background: '#B07D62', color: '#fff', fontFamily: "Manrope", fontSize: "16px" }
+        });
+        setFormData({ user_name: "", user_email: "" });
+    } else {
+        toast.error("Hubo un error en el servidor.");
+    }
+    } catch (error) {
+        console.error("Error de conexión:", error);
+        alert("No se pudo conectar con el servidor backend.");
+    }
+};
     return (
         <>
             <Navbar></Navbar>
@@ -140,9 +177,9 @@ const Home = () => {
                     <span>Suscribete para recibir consejos de biotecnologia aplicada a la piel y obten un 15% de descuento en tu primera compra</span>
                 </div>
                 <div className="contenedor5r">
-                    <form>
-                        <Input></Input>
-                        <InputCorreo></InputCorreo>
+                    <form onSubmit={enviarCorreo}>
+                        <Input value={formData.user_name} onChange={handleChange}></Input>
+                        <InputCorreo value={formData.user_email} onChange={handleChange}></InputCorreo>
                         <button className="enviarForm">Suscribirme ahora</button>
                     </form>
                 </div>
@@ -161,6 +198,7 @@ const Home = () => {
                     <span>Linkedin</span>
                 </div>
             </div>
+            <Toaster position="top-right" reverseOrder={false} />
         </>
     )
 }

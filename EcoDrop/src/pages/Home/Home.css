@@ -155,6 +155,10 @@
     margin-bottom: 40px;
 }
 
+.atributos span {
+    margin-left: 10px;
+}
+
 .atributos div {
     display: flex;
     align-items: center;

@@ -1,13 +1,13 @@
 import React from "react";
 import "./Input.css"
 
-const Input = () => {
+const Input = ({value, onChange}) => {
     return (
         <>
-            <div class="input-container">
-            <input placeholder="Nombre" class="input-field" type="text"/>
-            <label for="input-field" class="input-label">Nombre</label>
-            <span class="input-highlight"></span>
+            <div className="input-container">
+            <input placeholder="Nombre" className="input-field" type="text" name="user_name" value={value} onChange={onChange}/>
+            <label for="input-field" className="input-label">Nombre</label>
+            <span className="input-highlight"></span>
 </div>
         </>
     )
